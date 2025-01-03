@@ -16,7 +16,9 @@
         </div>
         <p class="game-description">{{ game.description }}</p>
         <div class="game-actions">
-          <a href="#" class="play-button">Играть</a>
+          <a href="{% url 'game_detail' game.pk %}" class="play-button"
+            >Играть</a
+          >
           <!-- <button class="favorite-button">♥</button> -->
         </div>
       </div>

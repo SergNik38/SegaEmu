@@ -183,3 +183,159 @@ h3 {
   color: var(--dark-bg);
   box-shadow: 0 0 10px var(--neon-pink);
 }
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.emulator-window {
+  background: rgba(10, 10, 15, 0.95);
+  border: 3px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.game-screen {
+  aspect-ratio: 4/3;
+  background: #000;
+  margin-bottom: 20px;
+}
+
+.game-screen canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.control-btn {
+  background: var(--neon-purple);
+  color: var(--dark-bg);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.meta-item {
+  color: var(--neon-purple);
+  font-size: 0.8em;
+  text-shadow: 0 0 5px var(--neon-purple);
+}
+
+.emulator-window {
+  background: rgba(10, 10, 15, 0.95);
+  border: 3px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.game-screen {
+  aspect-ratio: 4/3;
+  background: #000;
+  margin-bottom: 20px;
+  border: 2px solid var(--neon-pink);
+  border-radius: 4px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--neon-purple);
+  border: 2px solid var(--neon-purple);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: var(--neon-purple);
+  color: var(--dark-bg);
+  box-shadow: 0 0 15px var(--neon-purple);
+}
+
+.btn-icon {
+  font-size: 1.2em;
+}
+
+.info-section {
+  background: rgba(10, 10, 15, 0.8);
+  border: 2px solid var(--neon-pink);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.section-title {
+  color: var(--neon-blue);
+  font-size: 1.2em;
+  margin-bottom: 1rem;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.key {
+  background: var(--neon-purple);
+  color: var(--dark-bg);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  min-width: 60px;
+  text-align: center;
+}
+
+.key-desc {
+  color: var(--neon-blue);
+  font-size: 0.8em;
+}

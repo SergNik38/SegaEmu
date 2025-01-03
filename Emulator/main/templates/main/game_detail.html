@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="game-container">
+  <div class="game-header">
+    <h1 class="neon-text">{{ game.title }}</h1>
+    <div class="game-meta">
+      <span class="meta-item">Год: {{ game.release_year }}</span>
+      <span class="meta-item">Жанр: {{ game.genre }}</span>
+    </div>
+  </div>
+
+  <div class="emulator-window">
+    <div class="game-screen">
+      <canvas id="emulator"></canvas>
+    </div>
+
+    <div class="controls">
+      <button class="control-btn start">
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">Start</span>
+      </button>
+      <button class="control-btn reset">
+        <span class="btn-icon">↺</span>
+        <span class="btn-text">Reset</span>
+      </button>
+      <button class="control-btn fullscreen">
+        <span class="btn-icon">⛶</span>
+        <span class="btn-text">Fullscreen</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="game-info">
+    <div class="info-section">
+      <h2 class="section-title">Описание</h2>
+      <p class="game-description">{{ game.description }}</p>
+    </div>
+
+    <div class="info-section">
+      <h2 class="section-title">Управление</h2>
+      <div class="controls-grid">
+        <div class="control-item">
+          <span class="key">↑↓←→</span>
+          <span class="key-desc">Движение</span>
+        </div>
+        <div class="control-item">
+          <span class="key">Z</span>
+          <span class="key-desc">Кнопка A</span>
+        </div>
+        <div class="control-item">
+          <span class="key">X</span>
+          <span class="key-desc">Кнопка B</span>
+        </div>
+        <div class="control-item">
+          <span class="key">Enter</span>
+          <span class="key-desc">Start</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
