@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Sega Эмулятор{% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="/">SEGA GAMES</a>
+        <div>
+          <ul>
+            <li>
+              <a href="/">Главная</a>
+            </li>
+            <li>
+              <a href="/games">Игры</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div>{% block content %} {% endblock %}</div>
+
+    <footer>
+      <div>
+        <p>&copy; 2024 SEGA Эмулятор</p>
+      </div>
+    </footer>
+  </body>
+</html>
