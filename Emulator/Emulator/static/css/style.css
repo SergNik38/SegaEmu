@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  --neon-pink: #ff2d95;
+  --neon-blue: #2de2e6;
+  --neon-purple: #9d72ff;
+  --dark-bg: #0a0a0f;
+  --grid-color: rgba(45, 226, 230, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: var(--dark-bg);
+  color: #fff;
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+nav {
+  background: rgba(10, 10, 15, 0.9);
+  border-bottom: 2px solid var(--neon-blue);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  text-shadow: 0 0 5px var(--neon-blue);
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+footer {
+  background: rgba(10, 10, 15, 0.9);
+  border-top: 2px solid var(--neon-purple);
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--neon-purple);
+  text-shadow: 0 0 5px var(--neon-purple);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
+  margin-bottom: 1.5rem;
+}
+
+.game-card {
+  background: rgba(10, 10, 15, 0.95);
+  border: 2px solid var(--neon-blue);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--neon-blue);
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.neon-text {
+  animation: flicker 2s infinite;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.game-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.05);
+}
+
+.game-info {
+  padding: 1rem;
+}
+
+.game-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8em;
+  color: var(--neon-purple);
+}
+
+.game-description {
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.game-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.play-button {
+  background: var(--neon-blue);
+  color: var(--dark-bg);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8em;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.favorite-button {
+  background: none;
+  border: 2px solid var(--neon-pink);
+  color: var(--neon-pink);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-button:hover {
+  background: var(--neon-pink);
+  color: var(--dark-bg);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.emulator-window {
+  background: rgba(10, 10, 15, 0.95);
+  border: 3px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.game-screen {
+  aspect-ratio: 4/3;
+  background: #000;
+  margin-bottom: 20px;
+}
+
+.game-screen canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.control-btn {
+  background: var(--neon-purple);
+  color: var(--dark-bg);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.meta-item {
+  color: var(--neon-purple);
+  font-size: 0.8em;
+  text-shadow: 0 0 5px var(--neon-purple);
+}
+
+.emulator-window {
+  background: rgba(10, 10, 15, 0.95);
+  border: 3px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.game-screen {
+  aspect-ratio: 4/3;
+  background: #000;
+  margin-bottom: 20px;
+  border: 2px solid var(--neon-pink);
+  border-radius: 4px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--neon-purple);
+  border: 2px solid var(--neon-purple);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: var(--neon-purple);
+  color: var(--dark-bg);
+  box-shadow: 0 0 15px var(--neon-purple);
+}
+
+.btn-icon {
+  font-size: 1.2em;
+}
+
+.info-section {
+  background: rgba(10, 10, 15, 0.8);
+  border: 2px solid var(--neon-pink);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.section-title {
+  color: var(--neon-blue);
+  font-size: 1.2em;
+  margin-bottom: 1rem;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.key {
+  background: var(--neon-purple);
+  color: var(--dark-bg);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  min-width: 60px;
+  text-align: center;
+}
+
+.key-desc {
+  color: var(--neon-blue);
+  font-size: 0.8em;
+}

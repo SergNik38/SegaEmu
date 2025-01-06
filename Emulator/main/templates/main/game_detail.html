@@ -1,0 +1,111 @@
+{% extends 'main/base.html' %} {% load static %} {% block head %}
+<script type="text/javascript">
+  EJS_player = "#game";
+  EJS_core = "segaMD";
+  EJS_gameUrl = "{{ game.rom_file.url }}";
+  EJS_pathtodata = "{% static 'emulator/data/' %}";
+  EJS_startOnLoaded = true;
+  EJS_color = "#1a1a2e";
+  EJS_volume = 1;
+
+  // Добавляем настройки эмулятора
+  EJS_Settings = {
+    defaultControllers: true,
+    controlSettings: false,
+    volume: false,
+    saveState: false,
+    loadState: false,
+    resetButton: true,
+    cheats: false,
+    shaders: false,
+    fullscreen: true,
+    softPause: true,
+    fastForward: false,
+  };
+
+  // Настройки кнопок управления
+  EJS_Buttons = {
+    playPause: true,
+    restart: true,
+    mute: true,
+    settings: false,
+    fullscreen: true,
+    saveState: false,
+    loadState: false,
+    screenRecord: false,
+    gamepad: false,
+    cheat: false,
+    volume: false,
+    quickSave: false,
+    quickLoad: false,
+    screenshot: false,
+    cacheManager: false,
+  };
+</script>
+<script src="{% static 'emulator/data/loader.js' %}"></script>
+{% endblock %} {% block content %}
+<div class="game-container">
+  <div class="game-header">
+    <h1 class="neon-text">{{ game.title }}</h1>
+    <div class="game-meta">
+      <span class="meta-item">Год: {{ game.release_year }}</span>
+      <span class="meta-item">Жанр: {{ game.genre }}</span>
+    </div>
+  </div>
+
+  <div class="emulator-window">
+    <div id="game"></div>
+
+    <!-- <div class="controls">
+      <button class="control-btn start" onclick="EJS_emulator.startGame()">
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">Start</span>
+      </button>
+      <button class="control-btn reset" onclick="EJS_emulator.resetGame()">
+        <span class="btn-icon">↺</span>
+        <span class="btn-text">Reset</span>
+      </button>
+      <button
+        class="control-btn fullscreen"
+        onclick="EJS_emulator.toggleFullscreen()"
+      >
+        <span class="btn-icon">⛶</span>
+        <span class="btn-text">Fullscreen</span>
+      </button>
+    </div> -->
+  </div>
+
+  <div class="game-info">
+    <div class="info-section">
+      <h2 class="section-title">Описание</h2>
+      <p class="game-description">{{ game.description }}</p>
+    </div>
+
+    <div class="info-section">
+      <h2 class="section-title">Управление</h2>
+      <div class="controls-grid">
+        <div class="control-item">
+          <span class="key">↑↓←→</span>
+          <span class="key-desc">Движение</span>
+        </div>
+        <div class="control-item">
+          <span class="key">S</span>
+          <span class="key-desc">Кнопка A</span>
+        </div>
+        <div class="control-item">
+          <span class="key">X</span>
+          <span class="key-desc">Кнопка B</span>
+        </div>
+        <div class="control-item">
+          <span class="key">Z</span>
+          <span class="key-desc">Кнопка C</span>
+        </div>
+        <div class="control-item">
+          <span class="key">Enter</span>
+          <span class="key-desc">Start</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

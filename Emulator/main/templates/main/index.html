@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="container">
+  <h1 class="neon-text">Sega Games</h1>
+
+  <div class="games-grid">
+    {% for game in games %}
+    <div class="game-card">
+      <div class="game-image">
+        <img src="{{ game.cover_image.url }}" alt="Game Title" />
+      </div>
+      <div class="game-info">
+        <h2>{{ game.title }}</h2>
+        <div class="game-meta">
+          <span class="game-year">{{ game.release_year }}</span>
+          <span class="game-genre">{{ game.genre }}</span>
+        </div>
+        <p class="game-description">{{ game.description }}</p>
+        <div class="game-actions">
+          <a href="{% url 'game_detail' game.pk %}" class="play-button"
+            >Играть</a
+          >
+          <!-- <button class="favorite-button">♥</button> -->
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
